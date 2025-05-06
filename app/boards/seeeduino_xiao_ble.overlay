@@ -47,3 +47,15 @@
         t-exit-dpd = <8000>;
     };
 };
+
+// add for imu
+&i2c0 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    bmi270@68 {
+        compatible = "bosch,bmi270";
+        reg = <0x68>;
+        label = "BMI270";
+        // int-gpios = <&gpio0 25 GPIO_ACTIVE_HIGH>; // 使わなければ省略可
+    };
+};
