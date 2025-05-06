@@ -21,6 +21,9 @@ zephyr_syscall_header(${APPLICATION_SOURCE_DIR}/include/drivers/input_processor.
 zephyr_syscall_header(${APPLICATION_SOURCE_DIR}/include/drivers/ext_power.h)
 
 # Add your source file to the "app" target. This must come after
+
+target_sources(app PRIVATE src/sensors/imu_layer_switch.c)
+
 # find_package(Zephyr) which defines the target.
 target_include_directories(app PRIVATE include)
 target_sources(app PRIVATE src/stdlib.c)
